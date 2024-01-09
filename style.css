@@ -74,6 +74,28 @@ main {
     --altura: 180px;
 }
 
+#input {
+    font-size: 1.1rem;
+    padding: .5rem;
+    font-weight: bolder;
+    outline: none;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.bt-add {
+    font-size: 1.1rem;
+    padding: .5rem;
+    border: none;
+    outline: none;
+    background-color: #747BF2;
+    color: white;
+}
+
+.bt-add:hover {
+    background-color: #4a4f9c;
+}
+
 .nome {
     font-size: 32px;
     display: flex;
@@ -90,10 +112,31 @@ main {
 
 .historico {
     padding: 1rem;
-    overflow-y: hidden;
+    overflow-y: scroll;
     background: rgb(21, 21, 21);
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
+}
+
+/* width */
+.historico::-webkit-scrollbar {
+    width: .4rem;
+}
+
+/* Track */
+.historico::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+
+/* Handle */
+.historico::-webkit-scrollbar-thumb {
+    background: #3f3f3f;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.historico::-webkit-scrollbar-thumb:hover {
+    background: rgb(133, 133, 133);
 }
 
 .rodada {
@@ -142,7 +185,8 @@ p.historico-rodada {
     align-items: center0;
     padding-bottom: 10px;
     background-color: rgb(21, 21, 21);
-    /* height: 20px; */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .marcadores .ptsPartida, .marcadores .ptsCartas, .bt-anotarPts {
@@ -161,8 +205,17 @@ p.historico-rodada {
     font-weight: 600;
 }
 
+.marcadores .ptsPartida:focus::placeholder, .marcadores .ptsCartas:focus::placeholder {
+    color: transparent;
+}
+
 .bt-anotarPts {
     background-color: #A5F261;
     color: #1d2912;
     font-weight: 600;
+}
+
+.bt-anotarPts:hover {
+    background-color: #747BF2;
+    color: white;
 }

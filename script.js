@@ -25,6 +25,7 @@ function addPlayer() {
   let main = document.querySelector("main");
   
   nome.classList.add("nome");
+  nome.setAttribute("placeholder", "Jogador ou Dupla");
   total.classList.add("total");
   historico.classList.add("historico");
   indexRodada.classList.add('index-rodada');
@@ -32,7 +33,9 @@ function addPlayer() {
   totalRodada.classList.add('total-rodada');
   rodada.classList.add("rodada")
   inputPartida.classList.add("ptsPartida");
+  inputPartida.setAttribute("placeholder", "Partiu");
   inputCartas.classList.add("ptsCartas");
+  inputCartas.setAttribute("placeholder", "Cartas");
   btAnotarPts.classList.add("bt-anotarPts");
   btAnotarPts.setAttribute('id', 'bt'+(btPts.length+1))
   marcadores.classList.add("marcadores");
