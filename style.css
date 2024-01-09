@@ -1,0 +1,168 @@
+body {
+    background-color: black;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+/* input, button {font-size: 32px;} */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.jogadores {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    height: 500px;
+    width: 340px;
+    margin: auto;
+    border-radius: 20px;
+    margin: 20px;
+    position: relative;
+    color: #fff;
+    background-color: black;
+    border-radius: var(--border-width);
+    --border-width: 13px;
+  
+    &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    /* background-size: 300% 300%; */
+    /* background-position: 0 50%; */
+    border-radius: calc(2 * var(--border-width));
+    /* animation: moveGradient 4s alternate infinite; */
+  }
+}
+
+/* @keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+} */
+
+.cabecalho {
+    background-color: black;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    height: var(--altura);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: calc(--altura/2);
+}
+
+:root {
+    --altura: 180px;
+}
+
+.nome {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.total {
+    font-size: 28px;
+    color: #A5F261;
+    font-weight: 600;
+    text-align: center;
+}
+
+.historico {
+    padding: 1rem;
+    overflow-y: hidden;
+    background: rgb(21, 21, 21);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.rodada {
+    display: grid;
+    grid-template-columns: 1fr 7fr 2fr;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 2px solid #747BF2;
+}
+
+.rodada div {
+    padding: .5rem 1rem;
+}
+
+.rodada .index-rodada {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #747BF2;
+    font-weight: 600;
+}
+
+.rodada .historico-rodada {
+    text-align: center;
+    color: rgb(51, 51, 51);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+p.historico-rodada {
+    color: gray;
+}
+
+.rodada .total-rodada {
+    color: #A5F261;
+    font-weight: bold;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marcadores {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center0;
+    padding-bottom: 10px;
+    background-color: rgb(21, 21, 21);
+    /* height: 20px; */
+}
+
+.marcadores .ptsPartida, .marcadores .ptsCartas, .bt-anotarPts {
+    width: calc(100%/4);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.marcadores .ptsPartida, .marcadores .ptsCartas {
+    background-color: rgb(34, 34, 34);
+    border: 2px solid #747BF2;
+    color: gray;
+    font-weight: 600;
+}
+
+.bt-anotarPts {
+    background-color: #A5F261;
+    color: #1d2912;
+    font-weight: 600;
+}
