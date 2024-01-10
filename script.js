@@ -44,30 +44,38 @@ function addPlayer() {
 
   nome.innerHTML = input.value;
   total.innerHTML = 0;
-  btAnotarPts.innerHTML = "Marcar";
+  btAnotarPts.innerHTML = "Somar";
   
   btAnotarPts.addEventListener("click", function () {
     const index = btPts.indexOf(btAnotarPts);
     const jogador = players[index];
     const pontosPartida = parseInt(inputPartida.value) || 0;
     const pontosCartas = parseInt(inputCartas.value) || 0;
+    const pontosRodada = pontosPartida + pontosCartas
 
     jogador.pts.pp += pontosPartida;
     jogador.pts.pc += pontosCartas;
     jogador.pts.tt = jogador.pts.pt();
 
-    // Atualizar o elemento total com os pontos totais
+    if (pontosPartida  == "" || pontosCartas==""){
+      alert('Preencha todos os campos')
+    } else { 
+      // Atualizar o elemento total com os pontos totais
     total.innerHTML = jogador.pts.tt;
   
     // Atualizar o histórico de pontos
     // rodada.innerHTML = 'Rodada ';
     // historicoRodada.innerHTML = `Partiu de ${jogador.pts.pp} + Cartas ${jogador.pts.pc}`;
     // totalRodada.innerHTML = `${jogador.pts.tt}`
-    historico.innerHTML += `<p class="historico-rodada">Partiu de ${jogador.pts.pp} + Cartas ${jogador.pts.pc} = ${jogador.pts.tt}</p>`;
+
+
+    historico.innerHTML += `<p class="historico-rodada">Partiu de ${inputPartida.value} + Cartas ${inputCartas.value} = ${pontosRodada}</p>`;
 
     // Limpar os campos de entrada após marcar os pontos
     inputPartida.value = "";
     inputCartas.value = "";
+    }
+    
   });
 
   marcadores.appendChild(inputPartida);

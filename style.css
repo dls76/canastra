@@ -3,7 +3,15 @@ body {
     font-family: sans-serif;
     height: 100vh;
 }
-
+.config {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* display: block; */
+    z-index: 10;
+    display: flex;
+    /* display: none; */
+}
 /* input, button {font-size: 32px;} */
 main {
     display: flex;
@@ -11,6 +19,7 @@ main {
     align-items: center;
     height: 100vh;
     position: relative;
+    /* border: 5px solid red; */
 }
 
 .jogadores {
@@ -75,8 +84,8 @@ main {
 }
 
 #input {
-    font-size: 1.1rem;
-    padding: .5rem;
+    font-size: 1.3rem;
+    padding: 1rem;
     font-weight: bolder;
     outline: none;
     display: block;
@@ -84,12 +93,14 @@ main {
 }
 
 .bt-add {
-    font-size: 1.1rem;
-    padding: .5rem;
+    font-size: 1rem;
+    padding: .3rem .5rem;
     border: none;
     outline: none;
     background-color: #747BF2;
     color: white;
+    border-radius: 10px;
+    margin-left: 1rem;
 }
 
 .bt-add:hover {
