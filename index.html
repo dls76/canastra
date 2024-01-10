@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Canastra</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="global.css">
   </head>
   <body>
-
-    <div class="config">
-      <input id="input" type="text">
-      <button id="bt-add" class="bt-add">Adicionar Jogadores</button>
-      <!-- <button id="bt-count">Contar Botoes</button> -->
-    </div>
     <main>
-
+      <div class="inicio">
+        <h1 class="canastra">CANASTRA</h1>
+        <button class="feedback-btn">
+          Começar
+        </button>
+      </div>
+      
       <!-- <div class="jogadores">
         <div class="cabecalho">
           <div class="nome">Douglas e Andressa</div>
@@ -52,6 +52,42 @@
 
     </main>
 
+
+    
+    
+    <div class="modal">
+      <button class="close">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_7_7)">
+          <path d="M25.5 8.5L8.5 25.5" stroke="#DADADA" stroke-width="2.125" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 9L26 26" stroke="#DADADA" stroke-width="2.125" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_7_7">
+          <rect width="34" height="34" fill="white"/>
+          </clipPath>
+          </defs>
+         </svg>
+      </button>
+      
+      <h3 class="title">
+        Digite o nome do jogador ou da dupla:
+      </h3>
+      
+      <div class="config">
+        <input id="input" type="text">
+        <!-- <button id="bt-add" class="bt-add">Adicionar Jogadores</button> -->
+        <!-- <button id="bt-count">Contar Botoes</button> -->
+      </div>
+      
+      
+      
+      <div class="options">
+        <button class="cancel" type="button">Cancelar</button>
+        <button id="bt-add" class="submit bt-add">Confirmar</button>
+      </div>
+    </div>
+    <script src="modal.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
