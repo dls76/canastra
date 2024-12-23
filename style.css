@@ -89,7 +89,6 @@ main {
     --altura: 180px;
 }
 
-
 .nome {
     font-size: 32px;
     display: flex;
@@ -161,6 +160,7 @@ main {
 
 p.historico-rodada {
     color: gray;
+    color: WHITE;
 }
 
 .rodada .total-rodada {
@@ -192,10 +192,15 @@ p.historico-rodada {
     text-align: center;
 }
 
+.marcadores .ptsPartida::placeholder, .marcadores .ptsCartas::placeholder {
+    color: white;
+}
+
 .marcadores .ptsPartida, .marcadores .ptsCartas {
     background-color: rgb(34, 34, 34);
     border: 2px solid #747BF2;
     color: gray;
+    color: white;
     font-weight: 600;
 }
 

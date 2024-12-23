@@ -72,7 +72,7 @@ function addPlayer() {
       // totalRodada.innerHTML = `${jogador.pts.tt}`
 
 
-      historico.innerHTML += `<p class="historico-rodada">Partiu de ${inputPartida.value} + Cartas ${inputCartas.value} = ${pontosRodada}</p>`;
+      historico.innerHTML += `<p class="historico-rodada">Partiu de ${inputPartida.value} + ${inputCartas.value} de cartas = ${pontosRodada}</p>`;
 
       // Limpar os campos de entrada após marcar os pontos
       inputPartida.value = "";
