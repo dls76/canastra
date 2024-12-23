@@ -17,6 +17,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .canastra {
@@ -90,16 +94,18 @@ main {
 }
 
 .nome {
-    font-size: 32px;
+    font-size: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
 
 .total {
-    font-size: 28px;
+    font-size: 42px;
     color: #A5F261;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
 }
 

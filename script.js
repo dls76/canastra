@@ -1,4 +1,3 @@
-
 const players = [];
 const btPts = [...document.querySelectorAll("bt-anotarPts")];
 const input = document.querySelector("#input");
