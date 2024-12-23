@@ -107,8 +107,6 @@ function addPlayer() {
     input.focus();
   }
 }
-
-// Identificar o vencedor
 btWinner.addEventListener("click", function () {
   let max = 0;
   let winner = null;
@@ -124,7 +122,7 @@ btWinner.addEventListener("click", function () {
   // Ordenar jogadores por pontuação em ordem decrescente
   const sortedPlayers = [...players].sort((a, b) => b.pts.tt - a.pts.tt);
 
-  // Atualizar tags de vencedor e exibir diferenças no histórico
+  // Atualizar tags de vencedor
   players.forEach(player => {
     if (player === winner) {
       player.winnerTag.style.display = "block"; // Mostra a tag para o vencedor
@@ -134,13 +132,14 @@ btWinner.addEventListener("click", function () {
   });
 
   // Exibir diferença de pontos no histórico do vencedor
-  let differenceHistory = `<p><strong>Diferença de pontos:</strong></p>`;
+  let differenceHistory = `<p><strong>Diferença:</strong></p>`;
   for (let i = 1; i < sortedPlayers.length; i++) {
     const diff = sortedPlayers[0].pts.tt - sortedPlayers[i].pts.tt;
-    differenceHistory += `<p>${sortedPlayers[0].nome} tem ${diff} pontos a mais que ${sortedPlayers[i].nome}</p>`;
+    differenceHistory += `<p>${diff} pontos a mais que ${sortedPlayers[i].nome}</p>`;
   }
   winner.historico.innerHTML += differenceHistory;
 
   console.log("Max points:", max);
   console.log("Winner:", winner);
 });
+
