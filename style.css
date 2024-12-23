@@ -224,3 +224,30 @@ p.historico-rodada {
     background-color: #747BF2;
     color: white;
 }
+
+.winner-tag {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #A5F261;
+    color: #1d2912;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    display: none;
+}
+
+.winner-tag.active {
+    display: block;
+}
+
+.bt-winner {
+    background-color: #A5F261;
+    padding: 1rem;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
