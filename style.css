@@ -165,8 +165,8 @@ main {
 }
 
 p.historico-rodada {
-    color: gray;
-    color: WHITE;
+    color: white;
+    font-style: italic;
 }
 
 .rodada .total-rodada {
