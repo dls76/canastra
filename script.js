@@ -49,31 +49,40 @@ function addPlayer() {
     total.innerHTML = 0;
 
     // Evento para somar pontos
-    btAnotarPts.addEventListener("click", function () {
-      const index = btPts.indexOf(btAnotarPts);
-      const jogador = players[index];
-      const pontosPartida = parseInt(inputPartida.value) || 0;
-      const pontosCartas = parseInt(inputCartas.value) || 0;
-      const pontosRodada = pontosPartida + pontosCartas;
+btAnotarPts.addEventListener("click", function () {
+  // Identificar o índice do botão clicado
+  const index = btPts.indexOf(btAnotarPts);
+  const jogador = players[index];
 
-      jogador.pts.pp += pontosPartida;
-      jogador.pts.pc += pontosCartas;
-      jogador.pts.tt = jogador.pts.pt();
+  // Obter valores dos inputs
+  const pontosPartida = inputPartida.value.trim() === "" ? null : parseInt(inputPartida.value);
+  const pontosCartas = inputCartas.value.trim() === "" ? null : parseInt(inputCartas.value);
 
-      if (pontosPartida == "" || pontosCartas == "") {
-        alert("Preencha todos os campos");
-      } else {
-        // Atualizar pontuação total
-        total.innerHTML = jogador.pts.tt;
+  // Verificar se ambos os campos foram preenchidos
+  if (pontosPartida === null || pontosCartas === null) {
+    alert("Preencha todos os campos");
+    return; // Impedir que o restante do código seja executado
+  }
 
-        // Atualizar histórico de pontos
-        historico.innerHTML += `<p>${pontosPartida} + ${pontosCartas} = ${pontosRodada}</p>`;
+  // Calcular pontuação da rodada
+  const pontosRodada = pontosPartida + pontosCartas;
 
-        // Limpar campos
-        inputPartida.value = "";
-        inputCartas.value = "";
-      }
-    });
+  // Atualizar os pontos do jogador
+  jogador.pts.pp += pontosPartida;
+  jogador.pts.pc += pontosCartas;
+  jogador.pts.tt = jogador.pts.pt();
+
+  // Atualizar pontuação total
+  total.innerHTML = jogador.pts.tt;
+
+  // Atualizar histórico de pontos
+  historico.innerHTML += `<p>${pontosPartida} + ${pontosCartas} = ${pontosRodada}</p>`;
+
+  // Limpar campos
+  inputPartida.value = "";
+  inputCartas.value = "";
+});
+
 
     // Montagem do jogador no DOM
     marcadores.appendChild(inputPartida);
